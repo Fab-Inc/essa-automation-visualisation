@@ -1,0 +1,21 @@
+json_countries_path: PowerBi/countries-110m.json
+
+product_types_path: Data output from agents/agent_test_result_product_info_MU_20250721.xlsx
+
+product_impact_path: Data output from agents/agent_test_result_full_MU_20250623_V2.xlsx
+
+guide_path: Data_mapping_fromAgents_PowerBI.xlsx
+
+wiki_countries_url: https://en.wikipedia.org/wiki/List_of_alternative_country_names
+
+headers:
+  User-Agent:
+    Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+
+country_codes_url:
+  https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+
+country_cols:
+  - Countries with evidence on impact
+  - Country Headquarters
+  - Countries Implementing in
