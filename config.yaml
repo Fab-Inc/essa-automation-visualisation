@@ -1,5 +1,7 @@
 json_countries_path: PowerBi/countries-110m.json
 
+initial_dataset: Product Directory Mapping Tool.xlsx
+
 product_types_path: Data output from agents/agent_test_result_product_info_MU_20250721.xlsx
 
 product_impact_path: Data output from agents/agent_test_result_full_MU_20250623_V2.xlsx
@@ -19,3 +21,10 @@ country_cols:
   - Countries with evidence on impact
   - Country Headquarters
   - Countries Implementing in
+  - country_of_study
+
+value_replace_file: D:/Projects/Fab/Product dashboard/manual_replacing.xlsx
+
+evidence_path: Fab Inc Dropbox/Fab Inc BMGF AI/18. Evidence/ESSA data for products/MU_20250805/all_studies_relevant_cleaned_validated.csv
+
+regions: D:/Projects/Fab/Product dashboard/regions.csv
