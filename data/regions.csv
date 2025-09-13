@@ -5,9 +5,9 @@ Kenya,Sub-Saharan Africa
 " 'South Africa',",Sub-Saharan Africa
 " 'India',",South Asia
 " 'Uganda',",Sub-Saharan Africa
-" 'Brazil',",
+" 'Brazil',",MIC
 " 'Ghana',",Sub-Saharan Africa
-" ""People's Republic of China"",",
+" ""People's Republic of China"",",MIC
 " 'Bangladesh',",South Asia
 " 'Senegal',",Sub-Saharan Africa
 " 'Lebanon',",LMIC
@@ -18,21 +18,21 @@ Kenya,Sub-Saharan Africa
 " 'Malawi',",Sub-Saharan Africa
 " 'Democratic Republic of Congo',",Sub-Saharan Africa
 " 'Vietnam',",LMIC
-" 'Switzerland',",
-" 'United States',",
-" 'Palestine',",
+" 'Switzerland',",HIC
+" 'United States',",HIC
+" 'Palestine',",LMIC
 " 'Jordan',",LMIC
-" 'Greece',",
-" 'Germany',",
+" 'Greece',",HIC
+" 'Germany',",HIC
 " 'Djibouti',",Sub-Saharan Africa
 " 'Indonesia',",South Asia
-" 'Mexico',",
-" 'PR',",
+" 'Mexico',",MIC
+" 'PR',",HIC
 " 'Liberia',",Sub-Saharan Africa
-" 'Thailand',",
+" 'Thailand',",MIC
 " 'Egypt',",LMIC
-" 'Romania',",
-" 'United Kingdom',",
+" 'Romania',",MIC
+" 'United Kingdom',",HIC
 " 'Sierra Leone',",Sub-Saharan Africa
 " 'Botswana',",Sub-Saharan Africa
 " 'Lesotho',",Sub-Saharan Africa
@@ -41,34 +41,34 @@ Kenya,Sub-Saharan Africa
 " 'Eswatini',",Sub-Saharan Africa
 " 'Zambia',",Sub-Saharan Africa
 " 'Zimbabwe',",Sub-Saharan Africa
-" 'Guatemala',",
-" 'Ukraine',",
+" 'Guatemala',",LMIC
+" 'Ukraine',",LMIC
 " 'The Gambia',",Sub-Saharan Africa
 " 'Sri Lanka',",South Asia
 " 'Cambodia',",LMIC
 " 'Tunisia',",LMIC
-" 'United Arab Emirates',",
-" 'Canada',",
-" 'North Macedonia',",
-" 'Ireland',",
-" 'Australia',",
-" 'Denmark',",
-" 'Republic of China (Taiwan)',",
-" 'Portugal',",
+" 'United Arab Emirates',",HIC
+" 'Canada',",HIC
+" 'North Macedonia',",MIC
+" 'Ireland',",HIC
+" 'Australia',",HIC
+" 'Denmark',",HIC
+" 'Republic of China (Taiwan)',",MIC
+" 'Portugal',",HIC
 " 'Ethiopia',",Sub-Saharan Africa
-" 'Colombia',",
-" 'Malaysia',",
-" 'Ecuador',",
-" 'Philippines',",
-" 'Iran',",
-" 'Russia',",
+" 'Colombia',",MIC
+" 'Malaysia',",MIC
+" 'Ecuador',",MIC
+" 'Philippines',",LMIC
+" 'Iran',",MIC
+" 'Russia',",MIC
 " 'Mauritius',",Sub-Saharan Africa
-" 'HK',",
-" 'Saudi Arabia',",
+" 'HK',",HIC
+" 'Saudi Arabia',",HIC
 " 'Benin',",Sub-Saharan Africa
 " 'Cameroon',",Sub-Saharan Africa
 " ""Côte d'Ivoire"",",Sub-Saharan Africa
-" 'XK',",
+" 'XK',",MIC
 " 'Somalia',",Sub-Saharan Africa
 " 'South Sudan',",Sub-Saharan Africa
 " 'Central African Republic',",Sub-Saharan Africa
@@ -76,13 +76,13 @@ Kenya,Sub-Saharan Africa
 " 'Sudan',",Sub-Saharan Africa
 " 'Yemen',",LMIC
 " 'Kiribati',",LMIC
-" 'Marshall Islands',",
+" 'Marshall Islands',",MIC
 " 'Papua New Guinea',",LMIC
 " 'Solomon Islands',",LMIC
 " 'East Timor',",LMIC
 " 'Haiti',",LMIC
 " 'Myanmar',",LMIC
-" 'Sweden',",
-" 'Norway',",
-" 'Turkey',",
- 'New Zealand',
+" 'Sweden',",HIC
+" 'Norway',",HIC
+" 'Turkey',",MIC
+ 'New Zealand',HIC

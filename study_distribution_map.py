@@ -78,7 +78,7 @@ def plot_study_distribution_by_country_geopandas(
     df,
     country_col="country_of_study",
     figsize=(12, 6),
-    cmap="inferno",
+    cmap="plasma",
     save_path=None,
     shapefile_path="data/ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp",  # Update with your path
     label = "all"

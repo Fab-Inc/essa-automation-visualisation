@@ -47,7 +47,8 @@ products_with_studies = len(evidence_data["product_id"].unique())
 proportion = round(products_with_studies / total_products, 2) * 100
 
 # Add Tier to make it clear during visuals
-evidence_data["validation_number"] = "Tier-"+evidence_data["validation_number"].astype(str)
+#evidence_data["validation_number"] = "Tier-"+evidence_data["validation_number"].astype(str)
+evidence_data["validation_number"] = evidence_data["validation_number"].apply(lambda x: f"ESSA-tier-{x}" if x < 5 else "Not eligible")
 
 # %%
 validation_tiers = np.sort(evidence_data["validation_number"].unique())
@@ -71,7 +72,6 @@ alt_country_dict = merged_countries.set_index("iso_3")["Official name"].to_dict(
 alt_country_dict.update(merged_countries.set_index("iso_2")["Official name"].to_dict())
 alternative_countries = retrieve_countries(wiki_countries_URL, headers)
 [country_cleaning(evidence_data, "country_of_study", alt_country_dict) ]
-
 
 # get regions for the countries
 evidence_data["region"] = evidence_data["country_of_study"].apply(

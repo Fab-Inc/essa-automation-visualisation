@@ -27,4 +27,4 @@ value_replace_file: D:/Projects/Fab/Product dashboard/manual_replacing.xlsx
 
 evidence_path: Fab Inc Dropbox/Fab Inc BMGF AI/18. Evidence/ESSA data for products/MU_20250805/all_studies_relevant_cleaned_validated.csv
 
-regions: D:/Projects/Fab/Product dashboard/regions.csv
+regions: data/regions.csv

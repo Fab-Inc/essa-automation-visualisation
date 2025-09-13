@@ -72,22 +72,22 @@ def plot_country_distribution_by_tier(
     
     # Count products per (tier, country)
     tier_country_counts = (
-        df.groupby([tier_col, country_col])[product_col]
+        df.groupby([tier_col, country_col])["study_id"]
         .nunique()
-        .reset_index(name="product_count")
+        .reset_index(name="count")
     )
     
     # Tier totals + percentages
     tier_country_counts["tier_total"] = (
-        tier_country_counts.groupby(tier_col)["product_count"].transform("sum")
+        tier_country_counts.groupby(tier_col)["count"].transform("sum")
     )
     tier_country_counts["percentage"] = (
-        tier_country_counts["product_count"] / tier_country_counts["tier_total"] * 100
+        tier_country_counts["count"] / tier_country_counts["tier_total"] * 100
     ).round(1)
     
     # Top N countries overall
     top_countries = (
-        tier_country_counts.groupby(country_col)["product_count"]
+        tier_country_counts.groupby(country_col)["count"]
         .sum()
         .sort_values(ascending=False)
         .head(top_n)
@@ -104,7 +104,7 @@ def plot_country_distribution_by_tier(
     
     # Plot
     ax = pivot_data.plot(kind="bar", stacked=True, figsize=figsize, colormap=cmap)
-    ax.set_ylabel("Percentage of products")
+    ax.set_ylabel("Percentage of studies")
     ax.set_xlabel("Validation tier")
     ax.set_title(f"Distribution of Top {top_n} Countries within Each Validation Tier")
     ax.legend(bbox_to_anchor=(1.05, 1), loc="upper left", title="Country")
@@ -113,7 +113,7 @@ def plot_country_distribution_by_tier(
 
     # ---- Add n=... labels here ----
     tier_totals = (
-        df.groupby(tier_col)[product_col]
+        df.groupby(tier_col)["study_id"]
         .nunique()
         .reindex(pivot_data.index)
         .reset_index(name="count")
@@ -153,19 +153,20 @@ def plot_region_distribution_by_tier(
         df[region_col].notna()
         & (df[region_col] != "")
         & (df[region_col].str.lower() != "nan")
+        & (df["country_of_study"].notna())
     ]
 
     tier_region_counts = (
-        df.groupby([tier_col, region_col])[product_col]
+        df.groupby([tier_col, region_col])["study_id"]
         .nunique()
-        .reset_index(name="product_count")
+        .reset_index(name="count")
     )
 
     tier_region_counts["tier_total"] = (
-        tier_region_counts.groupby(tier_col)["product_count"].transform("sum")
+        tier_region_counts.groupby(tier_col)["count"].transform("sum")
     )
     tier_region_counts["percentage"] = (
-        tier_region_counts["product_count"] / tier_region_counts["tier_total"] * 100
+        tier_region_counts["count"] / tier_region_counts["tier_total"] * 100
     ).round(1)
 
     pivot_region = tier_region_counts.pivot(
@@ -173,7 +174,7 @@ def plot_region_distribution_by_tier(
     ).fillna(0)
 
     ax = pivot_region.plot(kind="bar", stacked=True, figsize=figsize, colormap=cmap)
-    ax.set_ylabel("Percentage of products")
+    ax.set_ylabel("Percentage of studies")
     ax.set_xlabel("Validation tier")
     ax.set_title("Distribution of Regions within Each Validation Tier")
     ax.legend(bbox_to_anchor=(1.05, 1), loc="upper left", title="Region")
@@ -182,7 +183,7 @@ def plot_region_distribution_by_tier(
 
     # ---- Add n=... labels here ----
     tier_totals = (
-        df.groupby(tier_col)[product_col]
+        df.groupby(tier_col)["study_id"]
         .nunique()
         .reindex(pivot_region.index)
         .reset_index(name="count")
@@ -236,17 +237,17 @@ def plot_studyyear_distribution_by_tier(
 
     # Count products per tier/year
     tier_year_counts = (
-        df.groupby([tier_col, year_col])[product_col]
+        df.groupby([tier_col, year_col])["study_id"]
         .nunique()
-        .reset_index(name="product_count")
+        .reset_index(name="count")
     )
 
     # Compute percentages
     tier_year_counts["tier_total"] = (
-        tier_year_counts.groupby(tier_col)["product_count"].transform("sum")
+        tier_year_counts.groupby(tier_col)["count"].transform("sum")
     )
     tier_year_counts["percentage"] = (
-        tier_year_counts["product_count"] / tier_year_counts["tier_total"] * 100
+        tier_year_counts["count"] / tier_year_counts["tier_total"] * 100
     ).round(1)
 
     # Pivot for stacked bar
@@ -256,7 +257,7 @@ def plot_studyyear_distribution_by_tier(
 
     # Plot
     ax = pivot_year.plot(kind="bar", stacked=True, figsize=figsize, colormap=cmap)
-    ax.set_ylabel("Percentage of products")
+    ax.set_ylabel("Percentage of studies")
     ax.set_xlabel("Validation tier")
     ax.set_title("Distribution of Study Years within Each Validation Tier")
     ax.legend(bbox_to_anchor=(1.05, 1), loc="upper left", title="Study year")
@@ -265,7 +266,7 @@ def plot_studyyear_distribution_by_tier(
 
     # ---- Add n=... labels here ----
     tier_totals = (
-        df.groupby(tier_col)[product_col]
+        df.groupby(tier_col)["study_id"]
         .nunique()
         .reindex(pivot_year.index)
         .reset_index(name="count")
